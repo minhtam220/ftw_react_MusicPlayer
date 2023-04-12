@@ -1,13 +1,12 @@
 //Controller
 import useMusicPlayer from "../hooks/useMusicPlayer";
-import { useState } from "react";
 //UI
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import PauseRounded from "@mui/icons-material/PauseRounded";
-import PlayArrowRounded from "@mui/icons-material/PlayArrowRounded";
+import HeadphonesIcon from "@mui/icons-material/Headphones";
 
 const TrackList = () => {
   const { trackList, playTrack, togglePlay, isPlaying, currentTrackIndex } =
@@ -42,8 +41,8 @@ const TrackList = () => {
                 },
               }}
             >
-              {index == currentTrackIndex ? (
-                <PlayArrowRounded sx={{ fontSize: "1rem" }} />
+              {index === currentTrackIndex ? (
+                <HeadphonesIcon sx={{ fontSize: "1rem" }} />
               ) : (
                 <PauseRounded sx={{ fontSize: "1rem" }} />
               )}

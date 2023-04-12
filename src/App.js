@@ -8,8 +8,6 @@ import {
   createTheme,
 } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-//controller
-import useMusicPlayer from "./hooks/useMusicPlayer";
 //children
 import TrackList from "./components/TrackList";
 import Controller from "./components/Controller";
@@ -49,7 +47,7 @@ const WallPaper = styled("div")({
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
-  width: 343,
+  width: 150,
   maxWidth: "100%",
   margin: "auto",
   position: "relative",
