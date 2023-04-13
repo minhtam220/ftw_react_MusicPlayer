@@ -42,9 +42,7 @@ const WallPaper = styled("div")({
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
-  width: 150,
-  //maxWidth: "100%",
-  //margin: "auto",
+  width: 200,
   top: "30%",
   right: "50%",
   position: "absolute",

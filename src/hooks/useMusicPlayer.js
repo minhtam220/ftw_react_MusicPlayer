@@ -7,7 +7,7 @@ const useMusicPlayer = () => {
   // Play a specific track
   function playTrack(index) {
     if (index === state.currentTrackIndex) {
-      console.log("clicked");
+      //console.log("clicked");
       togglePlay();
     } else {
       state.audioPlayer.pause();
@@ -19,10 +19,10 @@ const useMusicPlayer = () => {
         isPlaying: true,
       }));
     }
-    console.log(
-      state.currentTrackIndex !== null &&
-        state.tracks[state.currentTrackIndex].name
-    );
+    //console.log(
+    //state.currentTrackIndex !== null &&
+    //state.tracks[state.currentTrackIndex].name
+    //);
   }
 
   // Toggle play or pause

@@ -11,7 +11,7 @@ import {
 } from "@mui/icons-material";
 
 const Controller = () => {
-  const mainIconColor = "#fff";
+  const mainIconColor = "#000000";
 
   const {
     trackList,
@@ -23,10 +23,10 @@ const Controller = () => {
   } = useMusicPlayer();
 
   const handlePlay = () => {
-    console.log(currentTrackIndex);
-
     if (currentTrackIndex) {
       playTrack(currentTrackIndex);
+    } else {
+      playTrack(0);
     }
   };
 
@@ -36,8 +36,11 @@ const Controller = () => {
         sx={{ ml: 1, alignItems: "center" }}
         variant="caption"
         fontWeight={500}
+        fontSize="large"
       >
-        {currentTrackIndex ? trackList[currentTrackIndex]["name"] : ""}
+        {currentTrackIndex !== null
+          ? trackList[currentTrackIndex]["name"]
+          : "No track is playing"}
       </Typography>
       <Box
         sx={{
@@ -47,12 +50,11 @@ const Controller = () => {
           mt: -1,
         }}
       >
-        <IconButton aria-label="previous song">
-          <FastRewindRounded
-            fontSize="large"
-            htmlColor={mainIconColor}
-            onClick={() => playPreviousTrack()}
-          />
+        <IconButton
+          aria-label="previous song"
+          onClick={() => playPreviousTrack()}
+        >
+          <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
         </IconButton>
         <IconButton onClick={() => handlePlay()}>
           {isPlaying ? (
@@ -64,12 +66,8 @@ const Controller = () => {
             />
           )}
         </IconButton>
-        <IconButton aria-label="next song">
-          <FastForwardRounded
-            fontSize="large"
-            htmlColor={mainIconColor}
-            onClick={() => playNextTrack()}
-          />
+        <IconButton aria-label="next song" onClick={() => playNextTrack()}>
+          <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
         </IconButton>
       </Box>
     </>

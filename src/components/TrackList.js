@@ -5,14 +5,13 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import PauseRounded from "@mui/icons-material/PauseRounded";
-import HeadphonesIcon from "@mui/icons-material/Headphones";
+import { Headset, HeadsetOff } from "@mui/icons-material";
 
 const TrackList = () => {
-  const { trackList, playTrack, isPlaying, currentTrackIndex } =
-    useMusicPlayer();
+  const { trackList, playTrack, currentTrackIndex } = useMusicPlayer();
   const handlePlay = (index) => {
     playTrack(index);
+    console.log("currentTrackIndex: " + currentTrackIndex);
   };
   return (
     <>
@@ -41,9 +40,9 @@ const TrackList = () => {
               }}
             >
               {index === currentTrackIndex ? (
-                <HeadphonesIcon sx={{ fontSize: "1rem" }} />
+                <Headset sx={{ fontSize: "1rem" }} />
               ) : (
-                <PauseRounded sx={{ fontSize: "1rem" }} />
+                <HeadsetOff sx={{ fontSize: "1rem" }} />
               )}
             </IconButton>
             <Typography sx={{ ml: 1 }} variant="caption" fontWeight={500}>
