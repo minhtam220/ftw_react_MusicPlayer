@@ -9,11 +9,10 @@ import PauseRounded from "@mui/icons-material/PauseRounded";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 
 const TrackList = () => {
-  const { trackList, playTrack, togglePlay, isPlaying, currentTrackIndex } =
+  const { trackList, playTrack, isPlaying, currentTrackIndex } =
     useMusicPlayer();
   const handlePlay = (index) => {
     playTrack(index);
-    console.log(isPlaying);
   };
   return (
     <>

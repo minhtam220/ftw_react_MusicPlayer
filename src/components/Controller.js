@@ -2,14 +2,13 @@
 import useMusicPlayer from "../hooks/useMusicPlayer";
 //UI
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import PauseRounded from "@mui/icons-material/PauseRounded";
-import PlayArrowRounded from "@mui/icons-material/PlayArrowRounded";
-import FastForwardRounded from "@mui/icons-material/FastForwardRounded";
-import FastRewindRounded from "@mui/icons-material/FastRewindRounded";
-import { useState } from "react";
+import { Box, Typography, IconButton } from "@mui/material";
+import {
+  PauseRounded,
+  PlayArrowRounded,
+  FastForwardRounded,
+  FastRewindRounded,
+} from "@mui/icons-material";
 
 const Controller = () => {
   const mainIconColor = "#fff";
@@ -17,7 +16,6 @@ const Controller = () => {
   const {
     trackList,
     playTrack,
-    togglePlay,
     isPlaying,
     currentTrackIndex,
     playNextTrack,
@@ -25,8 +23,11 @@ const Controller = () => {
   } = useMusicPlayer();
 
   const handlePlay = () => {
-    playTrack(currentTrackIndex);
-    console.log(isPlaying);
+    console.log(currentTrackIndex);
+
+    if (currentTrackIndex) {
+      playTrack(currentTrackIndex);
+    }
   };
 
   return (
@@ -36,7 +37,7 @@ const Controller = () => {
         variant="caption"
         fontWeight={500}
       >
-        {trackList[currentTrackIndex]["name"]}
+        {currentTrackIndex ? trackList[currentTrackIndex]["name"] : ""}
       </Typography>
       <Box
         sx={{

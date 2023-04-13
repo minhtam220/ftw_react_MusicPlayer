@@ -1,12 +1,7 @@
 import "./App.css";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 //MUI
-import {
-  styled,
-  useTheme,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material/styles";
+import { styled, useTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 //children
 import TrackList from "./components/TrackList";
@@ -48,9 +43,11 @@ const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
   width: 150,
-  maxWidth: "100%",
-  margin: "auto",
-  position: "relative",
+  //maxWidth: "100%",
+  //margin: "auto",
+  top: "30%",
+  right: "50%",
+  position: "absolute",
   zIndex: 1,
   backgroundColor:
     theme.palette.mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.4)",
